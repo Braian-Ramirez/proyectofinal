@@ -1,3 +1,5 @@
+package presentacion;
+
 import javax.swing.*;
 
 public class ConsultaGini {
