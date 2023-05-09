@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jackson-annotations-2.15.0-rc2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/jarGPT/jackson-annotations-2.15.0-rc2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jarGPT/jackson-core-2.15.0-rc2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jarGPT/jackson-databind-2.15.0-rc2.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+  </library>
+</component>
