@@ -1,4 +1,4 @@
-package presentacion;
+package Presentacion;
 
 import Logica.Buscador;
 
@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class consultaG {
-    private JTextField paísTextField;
+    private JTextField paisTextField;
     private JPanel panel1;
     private JTextField segundoPaísTextField;
     private JButton buscarButton;
@@ -17,14 +17,17 @@ public class consultaG {
     private JTextArea informaciónPaisTextArea;
     private JComboBox comboBox1;
     private JComboBox comboBox2;
-    private JTextArea interaccionConChatGPTTextArea;
-    private JTextPane interacciónChatGPTTextPane;
-public consultaG() {
+    private JTextField textField1;
+    private JTextPane textPane1;
+    private JTextField textField2;
+    private JTextPane textPane2;
+
+    public consultaG() {
     buscarButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             System.out.println("que bueno");
-            String pais = paísTextField.getText();
+            String pais = paisTextField.getText();
             String pais2 = segundoPaísTextField.getText();
             Buscador buscador = new Buscador();
             buscador.setPaisBuscar(pais, pais2);

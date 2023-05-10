@@ -1,4 +1,4 @@
-import presentacion.consultaG;
+import Presentacion.consultaG;
 
 import javax.swing.*;
 
