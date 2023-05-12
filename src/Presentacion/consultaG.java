@@ -1,6 +1,6 @@
 package Presentacion;
 
-import Logica.Buscador;
+import Logica.BuscadorDTO;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,7 +30,7 @@ public class consultaG {
             System.out.println("que bueno");
             String pais = paisTextField.getText();
             String pais2 = segundoPaísTextField.getText();
-            Buscador buscador = new Buscador();
+            BuscadorDTO buscador = new BuscadorDTO();
             buscador.setPaisBuscar(pais, pais2);
         }
     });
@@ -40,7 +40,7 @@ public class consultaG {
                 System.out.println("que bueno");
                 String BuscadorGPT = BusquedaGPT.getText();
 
-                Buscador buscador = new Buscador();
+                BuscadorDTO buscador = new BuscadorDTO();
                 buscador.setBusquedaGPT(BuscadorGPT);
                 super.keyTyped(e);
             }
