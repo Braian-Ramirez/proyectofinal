@@ -14,5 +14,7 @@ public boolean procesarDatos() {
 
     return false;
 }
-
+public  void setBusquedaGPT(String BuscadorGPT){
+    System.out.println("ya recibi busqueda" +  BuscadorGPT);
+}
 }

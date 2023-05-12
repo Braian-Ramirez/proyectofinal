@@ -240,13 +240,15 @@
                   <text value="imagen escudo"/>
                 </properties>
               </component>
-              <component id="6910f" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+              <component id="6910f" class="javax.swing.JTextField" binding="BusquedaGPT">
                 <constraints>
                   <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <text value=""/>
+                </properties>
               </component>
               <component id="3ee6" class="javax.swing.JLabel">
                 <constraints>
