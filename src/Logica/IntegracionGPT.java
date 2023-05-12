@@ -20,7 +20,7 @@ public class IntegracionGPT {
         try {
             url = new URL(apiUrl);
         } catch (MalformedURLException ex) {
-            throw new RuntimeException(ex);
+            throw new  RuntimeException(ex);
         }
         HttpURLConnection connection = null;
         try {

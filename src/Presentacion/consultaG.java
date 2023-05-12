@@ -13,14 +13,13 @@ public class consultaG {
     private JButton buscarButton;
     private JTabbedPane tabbedPane1;
     private JTabbedPane tabbedPane2;
-    private JTextArea informaciónPaísTextArea;
-    private JTextArea informaciónPaisTextArea;
     private JComboBox comboBox1;
     private JComboBox comboBox2;
     private JTextField textField1;
     private JTextPane textPane1;
     private JTextField textField2;
     private JTextPane textPane2;
+    private JList list1;
 
     public consultaG() {
     buscarButton.addActionListener(new ActionListener() {

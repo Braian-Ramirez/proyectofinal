@@ -10,7 +10,7 @@ import java.net.URL;
 public class UserService {
     private static final String BASE_URL = "https://jsonplaceholder.typicode.com/todos/";
 
-    public String getUserInfo() throws IOException{
+    public String getPaisInfo() throws IOException{
         URL url = new URL(BASE_URL + 6);
         HttpURLConnection connection = (HttpURLConnection)  url.openConnection();
         connection.setRequestMethod("GET");

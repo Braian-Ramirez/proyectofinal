@@ -11,7 +11,7 @@ public class RestApi {
     {
         String userInfo = null;
         try {
-            userInfo = userService.getUserInfo();
+            userInfo = userService.getPaisInfo();
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
