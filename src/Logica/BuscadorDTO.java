@@ -2,7 +2,7 @@ package Logica;
 
 import Persistencia.BuscadorDAO;
 
-public class BuscadorDTO {
+public class  BuscadorDTO {
 public void setPaisBuscar( String pais, String pais2 ){
     System.out.println("ya recibi el pais " + pais);
     System.out.println("ya recibe el segundo país " + pais2);

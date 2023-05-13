@@ -5,19 +5,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
 public class RestApi {
-    UserService userService = new UserService();
+    ConsultaApiPaisesDTO consultaApiPaisesDTOonsulta = new ConsultaApiPaisesDTO();
     ObjectMapper objectMapper = new ObjectMapper();
 
     {
-        String userInfo = null;
+        String paisInfo = null;
         try {
-            userInfo = userService.getPaisInfo();
+            paisInfo = ConsultaApiPaisesDTO.getPaisInfo();
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
         JsonNode json = null;
         try {
-            json = objectMapper.readTree(userInfo);
+            json = objectMapper.readTree(paisInfo);
         } catch (JsonProcessingException ex) {
             throw new RuntimeException(ex);
         }
