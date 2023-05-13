@@ -21,7 +21,6 @@ public class consultaG {
     private JTextPane textPane1;
     private JTextField textField2;
     private JTextPane textPane2;
-    private JList list1;
 
     public consultaG() {
     buscarButton.addActionListener(new ActionListener() {
