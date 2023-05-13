@@ -1,6 +1,7 @@
 package Presentacion;
 
 import Logica.BuscadorDTO;
+import Logica.ConsultaApiPaisesDTO;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class consultaG {
-    private JTextField paisTextField;
+    public JTextField paisTextField;
     private JPanel panel1;
     private JTextField segundoPaísTextField;
     private JButton buscarButton;
@@ -31,9 +32,18 @@ public class consultaG {
             String pais2 = segundoPaísTextField.getText();
             BuscadorDTO buscador = new BuscadorDTO();
             buscador.setPaisBuscar(pais, pais2);
+
+            ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
+            try{
+
+            consultaApiPaisesDTO.getPaisInfo(pais);
+            }catch (Exception es){
+                System.out.println(es);
+            }
         }
     });
-        BusquedaGPT.addKeyListener(new KeyAdapter() {
+
+    BusquedaGPT.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 System.out.println("que bueno");
@@ -41,9 +51,12 @@ public class consultaG {
 
                 BuscadorDTO buscador = new BuscadorDTO();
                 buscador.setBusquedaGPT(BuscadorGPT);
+
+
                 super.keyTyped(e);
             }
         });
+
     }
     public JPanel getPanel1() {
         return this.panel1;

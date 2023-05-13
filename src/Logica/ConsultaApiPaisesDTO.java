@@ -1,5 +1,5 @@
 package Logica;
-
+import Presentacion.consultaG;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,11 +8,13 @@ import java.net.URL;
 
 public class ConsultaApiPaisesDTO {
 
-        private static final String BASE_URL = "https://jsonplaceholder.typicode.com/todos/";
+        private static final String BASE_URL = "https://restcountries.com/v3.1/name";
 
-        public static String getPaisInfo() throws IOException {
-            URL url = new URL(BASE_URL + 6);
-            HttpURLConnection connection = (HttpURLConnection)  url.openConnection();
+        public static String getPaisInfo(String nombrePais) throws IOException {
+            URL url = new URL(BASE_URL + nombrePais);
+            System.out.println(BASE_URL + nombrePais);
+
+          /*  HttpURLConnection connection = (HttpURLConnection)  url.openConnection();
             connection.setRequestMethod("GET");
 
             int responseCode = connection.getResponseCode();
@@ -27,8 +29,11 @@ public class ConsultaApiPaisesDTO {
                 response.append(inputLine);
             }
             in.close();
-            return response.toString();
+
+           */
+            return"SI FUNCIONA";
         }
+
     }
 
 
