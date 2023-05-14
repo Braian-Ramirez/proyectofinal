@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 public class consultaG {
     public JTextField paisTextField;
     private JPanel panel1;
-    private JTextField segundoPaísTextField;
+    public JTextField segundoPaísTextField;
     private JButton buscarButton;
     private JTabbedPane tabbedPane1;
     private JTabbedPane tabbedPane2;
@@ -22,6 +22,8 @@ public class consultaG {
     private JTextPane textPane1;
     private JTextField textField2;
     private JTextPane textPane2;
+    private JLabel NombrePais;
+    private JPanel nombrepais;
 
     public consultaG() {
     buscarButton.addActionListener(new ActionListener() {
@@ -35,8 +37,9 @@ public class consultaG {
 
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
             try{
-
-            consultaApiPaisesDTO.getPaisInfo(pais);
+            consultaApiPaisesDTO.getPaisInfo(pais, pais2);
+           // String resultado = consultaApiPaisesDTO.getPaisInfo(paisTextField.getText(), segundoPaísTextField.getText());
+           // nombrepais.setToolTipText(resultado);
             }catch (Exception es){
                 System.out.println(es);
             }
