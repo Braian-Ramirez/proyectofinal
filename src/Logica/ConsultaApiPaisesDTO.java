@@ -1,4 +1,5 @@
 package Logica;
+import Presentacion.consultaG;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -9,22 +10,20 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ConsultaApiPaisesDTO {
-
-
-        private static final String BASE_URL = "https://restcountries.com/v3.1/name/";
         private static String name;
         private static String capital;
         private static double gini;
-        private static String moneda;
-        private static String flag;
+        private static  String flag;
         private static String shield;
         private static String name2;
         private static String capital2;
         private static double gini2;
 
 
-        public static String getPaisInfo(String nombrePais, String nombrePais2) throws IOException {
 
+    private static final String BASE_URL = "https://restcountries.com/v3.1/name/";
+
+        public static String getPaisInfo(String nombrePais,String nombrePais2) throws IOException {
             URL url = new URL(BASE_URL + nombrePais);
             URL url2 = new URL(BASE_URL + nombrePais2);
             System.out.println(BASE_URL + nombrePais);
@@ -54,55 +53,59 @@ public class ConsultaApiPaisesDTO {
             }
             in.close();
 
+           // System.out.println(response.toString());
+            //System.out.println(response1.toString());
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode json = objectMapper.readTree(response.toString());
-
             name = json.get(0).get("name").get("common").asText();
             gini = json.get(0).get("gini").get("2019").asDouble();
             capital = json.get(0).get("capital") .get(0).asText();
-            moneda = json.get(0).get("currencies").get("COP") .get("name").asText();
-            flag = json.get(0).get("flags").get("png").asText();
-            shield = json.get(0).get("coatOfArms").get("png").asText();
+            flag = json.get(0).get("flags") .get("png").asText();
+            shield = json.get(0).get("coatOfArms") .get("png").asText();
+            System.out.println(name);
             System.out.println(flag);
             System.out.println(shield);
-            System.out.println(moneda);
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
             name2 = json1.get(0).get("name").get("common").asText();
             gini2 = json1.get(0).get("gini").get("2019").asDouble();
             capital2 = json1.get(0).get("capital") .get(0).asText();
-
-
-            return response.toString();
-
-
+            System.out.println(name2);
+            System.out.println(gini2);
+            System.out.println(capital2);
+            return " ";
+        }
+        public static String getName(){
+            return name;
         }
 
-    public String getName(){
-        return name;
-    }
-    public  String getCapital(){
+    public static String getCapital() {
         return capital;
     }
-    public double getGini(){
+
+    public static double getGini() {
         return gini;
     }
-    public String getFlag(){
+
+    public static String getFlag() {
         return flag;
     }
-    public String getShield(){
+
+    public static String getShield() {
         return shield;
     }
-    public String getName2(){
+
+    public static String getName2() {
         return name2;
     }
-    public  String getCapital2(){
+
+    public static String getCapital2() {
         return capital2;
     }
-    public double getGini2(){
+
+    public static double getGini2() {
         return gini2;
     }
-
-    }
+}
 
 
