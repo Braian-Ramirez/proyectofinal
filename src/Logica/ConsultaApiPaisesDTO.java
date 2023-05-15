@@ -12,14 +12,19 @@ import java.net.URL;
 public class ConsultaApiPaisesDTO {
         private static String name;
         private static String capital;
+        private static String idioma;
+        private static String mapa;
+        private static String continente;
+        private static String subregion;
+        private static double area;
+        private static String zonaHoraria;
+        private static double poblacion;
         private static double gini;
-        private static  String flag;
+        private static String flag;
         private static String shield;
         private static String name2;
         private static String capital2;
         private static double gini2;
-
-
 
     private static final String BASE_URL = "https://restcountries.com/v3.1/name/";
 
@@ -60,9 +65,23 @@ public class ConsultaApiPaisesDTO {
             name = json.get(0).get("name").get("common").asText();
             gini = json.get(0).get("gini").get("2019").asDouble();
             capital = json.get(0).get("capital") .get(0).asText();
+            poblacion = json.get(0).get("population").asDouble();
+            area = json.get(0).get("area").asDouble();
+            zonaHoraria = json.get(0).get("timezones").asText();
+            continente = json.get(0).get("region").asText();
+            subregion = json.get(0).get("subregion").asText();
+            idioma = json.get(0).get("languages").asText();
+            mapa = json.get(0).get("maps").get("googleMaps").asText();
             flag = json.get(0).get("flags") .get("png").asText();
             shield = json.get(0).get("coatOfArms") .get("png").asText();
             System.out.println(name);
+            System.out.println(poblacion);
+            System.out.println(area);
+            System.out.println(zonaHoraria);
+            System.out.println(idioma);
+            System.out.println(continente);
+            System.out.println(subregion);
+            System.out.println(mapa);
             System.out.println(flag);
             System.out.println(shield);
 
@@ -105,6 +124,23 @@ public class ConsultaApiPaisesDTO {
 
     public static double getGini2() {
         return gini2;
+    }
+
+    public static double getPoblacion(){return poblacion;}
+
+    public static String getIdioma() {
+        return idioma;
+    }
+    public static  String getMapa(){
+            return mapa;
+    }
+
+    public static String getContinente() {
+        return continente;
+    }
+
+    public static String getSubregion() {
+        return subregion;
     }
 }
 

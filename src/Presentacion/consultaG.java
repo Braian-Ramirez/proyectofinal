@@ -32,6 +32,8 @@ public class consultaG {
     private JLabel Capital2;
     private JLabel Gini2;
     private JLabel ImagenBandera;
+    private JLabel poblacion;
+    private JLabel idioma;
     private JPanel nombrepais;
 
     public consultaG() {
@@ -51,6 +53,8 @@ public class consultaG {
              NombrePais.setText(consultaApiPaisesDTO.getName());
              Capital.setText(consultaApiPaisesDTO.getCapital());
              gini.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
+             poblacion.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
+             idioma.setText(consultaApiPaisesDTO.getIdioma());
              //ImagenBandera.setIcon(asociaciónImagenes.getIcon());
              NombrePais2.setText(consultaApiPaisesDTO.getName2());
              Capital2.setText(consultaApiPaisesDTO.getCapital2());
