@@ -41,7 +41,7 @@ public class ConsultaChatGptDTO {
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Authorization", "Bearer " + openaiApikey);
             connection.setDoOutput(true);
-            String jsonInputString = "{\"model\":\"text-davinci-003\",\"prompt\":\"quien soy yo?\",\"max_tokens\":70,\"temperature\":0.8}" + consulta;
+            String jsonInputString = "{\"model\":\"text-davinci-003\",\"prompt\":\""+consulta+"\",\"max_tokens\":70,\"temperature\":0.8}";
 
             try (OutputStream outputStream = connection.getOutputStream()) {
                 outputStream.write(jsonInputString.getBytes());

@@ -167,7 +167,7 @@
                   <text value="Gini"/>
                 </properties>
               </component>
-              <component id="28888" class="javax.swing.JLabel">
+              <component id="28888" class="javax.swing.JLabel" binding="poblacion2">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -175,7 +175,7 @@
                   <text value="Poblacion"/>
                 </properties>
               </component>
-              <component id="bd76e" class="javax.swing.JLabel">
+              <component id="bd76e" class="javax.swing.JLabel" binding="moneda2">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -183,7 +183,7 @@
                   <text value="moneda"/>
                 </properties>
               </component>
-              <component id="6000e" class="javax.swing.JLabel">
+              <component id="6000e" class="javax.swing.JLabel" binding="idioma2">
                 <constraints>
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>

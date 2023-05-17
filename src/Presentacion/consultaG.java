@@ -34,6 +34,9 @@ public class consultaG {
     private JLabel ImagenBandera;
     private JLabel poblacion;
     private JLabel idioma;
+    private JLabel poblacion2;
+    private JLabel moneda2;
+    private JLabel idioma2;
     private JPanel nombrepais;
 
     public consultaG() {
@@ -47,7 +50,9 @@ public class consultaG {
             buscador.setPaisBuscar(pais, pais2);
 
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
-            //AsociaciónImagenes asociaciónImagenes = new AsociaciónImagenes();
+            AsociaciónImagenes asociaciónImagenes = new AsociaciónImagenes();
+
+            //System.out.println(consultaApiPaisesDTO.getFlag());
             try{
             consultaApiPaisesDTO.getPaisInfo(pais, pais2);
              NombrePais.setText(consultaApiPaisesDTO.getName());
@@ -55,10 +60,14 @@ public class consultaG {
              gini.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
              poblacion.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
              idioma.setText(consultaApiPaisesDTO.getIdioma());
-             //ImagenBandera.setIcon(asociaciónImagenes.getIcon());
+             ImagenBandera.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag()));
              NombrePais2.setText(consultaApiPaisesDTO.getName2());
              Capital2.setText(consultaApiPaisesDTO.getCapital2());
              Gini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
+             poblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
+             idioma2.setText(consultaApiPaisesDTO.getIdioma2());
+
+             //ImagenBandera.setIcon(asociaciónImagenes.getIcon());
             }catch (Exception es){
                 System.out.println(es);
             }

@@ -9,24 +9,18 @@ import java.net.URL;
 
 public class AsociaciónImagenes {
     private ImageIcon icon;
-    ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
 
 
-    public AsociaciónImagenes(){
+    public ImageIcon procesaImagen(String urlImage) throws MalformedURLException {
 
         {
-            URL url = null;
-            try {
-                url = new URL(consultaApiPaisesDTO.getFlag());
-            } catch (MalformedURLException ex) {
-                throw new RuntimeException(ex);
-            }
+            URL url = new URL(urlImage);
             ImageIcon imagen = new ImageIcon(url);
             int ancho = 200;
             int alto = 200;
             Image img = imagen.getImage().getScaledInstance( ancho, alto, Image.SCALE_SMOOTH);
             ImageIcon imagenEscalada = new ImageIcon( img );
-           // setIcon(imagenEscalada);
+            return imagenEscalada;
 
         }
     }

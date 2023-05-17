@@ -10,25 +10,33 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ConsultaApiPaisesDTO {
-        private static String name;
-        private static String capital;
-        private static String idioma;
-        private static String mapa;
-        private static String continente;
-        private static String subregion;
-        private static double area;
-        private static String zonaHoraria;
-        private static double poblacion;
-        private static double gini;
-        private static String flag;
-        private static String shield;
-        private static String name2;
-        private static String capital2;
-        private static double gini2;
+        private  String name;
+        private  String capital;
+        private  String idioma;
+        private  String mapa;
+        private  String continente;
+        private  String subregion;
+        private  double area;
+        private  String zonaHoraria;
+        private  double poblacion;
+        private  double gini;
+        private  String flag;
+        private  String shield;
+        private  String Name2;
+        private  String Capital2;
+        private  double Gini2;
+        private  String Mapa2;
+        private  String Continente2;
+        private  String Subregion2;
+        private  double Area2;
+        private  String ZonaHoraria2;
+        private  double Poblacion2;
+        private  String Flag2;
+        private  String Shield2;
+        private  String Idioma2;
+    private final String BASE_URL = "https://restcountries.com/v3.1/name/";
 
-    private static final String BASE_URL = "https://restcountries.com/v3.1/name/";
-
-        public static String getPaisInfo(String nombrePais,String nombrePais2) throws IOException {
+        public  String getPaisInfo(String nombrePais,String nombrePais2) throws IOException {
             URL url = new URL(BASE_URL + nombrePais);
             URL url2 = new URL(BASE_URL + nombrePais2);
             System.out.println(BASE_URL + nombrePais);
@@ -58,22 +66,20 @@ public class ConsultaApiPaisesDTO {
             }
             in.close();
 
-           // System.out.println(response.toString());
-            //System.out.println(response1.toString());
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode json = objectMapper.readTree(response.toString());
-            name = json.get(0).get("name").get("common").asText();
-            gini = json.get(0).get("gini").get("2019").asDouble();
-            capital = json.get(0).get("capital") .get(0).asText();
-            poblacion = json.get(0).get("population").asDouble();
-            area = json.get(0).get("area").asDouble();
-            zonaHoraria = json.get(0).get("timezones").asText();
-            continente = json.get(0).get("region").asText();
-            subregion = json.get(0).get("subregion").asText();
-            idioma = json.get(0).get("languages").asText();
-            mapa = json.get(0).get("maps").get("googleMaps").asText();
-            flag = json.get(0).get("flags") .get("png").asText();
-            shield = json.get(0).get("coatOfArms") .get("png").asText();
+            this.name = json.get(0).get("name").get("common").asText();
+            this.gini = json.get(0).get("gini").get("2019").asDouble();
+            this.capital = json.get(0).get("capital") .get(0).asText();
+            this.poblacion = json.get(0).get("population").asDouble();
+            this.area = json.get(0).get("area").asDouble();
+            this.zonaHoraria = json.get(0).get("timezones").asText();
+            this.continente = json.get(0).get("region").asText();
+            this.subregion = json.get(0).get("subregion").asText();
+            this.idioma = json.get(0).get("languages").asText();
+            this.mapa = json.get(0).get("maps").get("googleMaps").asText();
+            this.flag = json.get(0).get("flags") .get("png").asText();
+            this.shield = json.get(0).get("coatOfArms") .get("png").asText();
             System.out.println(name);
             System.out.println(poblacion);
             System.out.println(area);
@@ -86,61 +92,105 @@ public class ConsultaApiPaisesDTO {
             System.out.println(shield);
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
-            name2 = json1.get(0).get("name").get("common").asText();
-            gini2 = json1.get(0).get("gini").get("2019").asDouble();
-            capital2 = json1.get(0).get("capital") .get(0).asText();
-            System.out.println(name2);
-            System.out.println(gini2);
-            System.out.println(capital2);
+            this.Name2 = json1.get(0).get("name").get("common").asText();
+            this.Gini2 = json1.get(0).get("gini").get("2019").asDouble();
+            this.Capital2 = json1.get(0).get("capital") .get(0).asText();
+            this.Poblacion2 = json1.get(0).get("population").asDouble();
+            this.Area2 = json1.get(0).get("area").asDouble();
+            this.ZonaHoraria2 = json1.get(0).get("timezones").asText();
+            this.Continente2 = json1.get(0).get("region").asText();
+            this.Subregion2 = json1.get(0).get("subregion").asText();
+            this.Idioma2 = json1.get(0).get("languages").asText();
+            this.Mapa2 = json1.get(0).get("maps").get("googleMaps").asText();
+            this.Flag2 = json1.get(0).get("flags") .get("png").asText();
+            this.Shield2 = json1.get(0).get("coatOfArms") .get("png").asText();
+            System.out.println(Name2);
+            System.out.println(Gini2);
+            System.out.println(Capital2);
+            System.out.println(Poblacion2);
+            System.out.println(Flag2);
+            System.out.println(Shield2);
+            System.out.println(Area2);
+            System.out.println(ZonaHoraria2);
+            System.out.println(Idioma2);
+            System.out.println(Continente2);
+            System.out.println(Subregion2);
+            System.out.println(Mapa2);
+
+
             return " ";
         }
-        public static String getName(){
+        public String getName(){
             return name;
         }
 
-    public static String getCapital() {
+        public  String getCapital() {
         return capital;
     }
 
-    public static double getGini() {
+        public double getGini() {
         return gini;
     }
 
-    public static String getFlag() {
+       public  String getFlag() {
         return flag;
     }
 
-    public static String getShield() {
+      public String getShield() {
         return shield;
     }
 
-    public static String getName2() {
-        return name2;
-    }
+      public double getPoblacion(){return poblacion;}
 
-    public static String getCapital2() {
-        return capital2;
-    }
-
-    public static double getGini2() {
-        return gini2;
-    }
-
-    public static double getPoblacion(){return poblacion;}
-
-    public static String getIdioma() {
+      public String getIdioma() {
         return idioma;
     }
-    public static  String getMapa(){
+      public String getMapa(){
             return mapa;
     }
 
-    public static String getContinente() {
+      public  String getContinente() {
         return continente;
     }
 
-    public static String getSubregion() {
+      public  String getSubregion() {
         return subregion;
+    }
+
+    public String getName2() {
+        return Name2;
+    }
+
+    public  String getCapital2() {
+        return Capital2;
+    }
+
+    public double getGini2() {
+        return Gini2;
+    }
+
+    public double getPoblacion2(){return Poblacion2;}
+
+    public String getIdioma2() {
+        return Idioma2;
+    }
+    public String getMapa2(){
+        return Mapa2;
+    }
+
+    public  String getContinente2() {
+        return Continente2;
+    }
+
+    public  String getSubregion2() {
+        return Subregion2;
+    }
+    public  String getFlag2() {
+        return Flag2;
+    }
+
+    public String getShield2() {
+        return Shield2;
     }
 }
 
