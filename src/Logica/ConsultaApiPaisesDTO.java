@@ -87,7 +87,7 @@ public class ConsultaApiPaisesDTO {
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
             name2 = json1.get(0).get("name").get("common").asText();
-            gini2 = json1.get(0).get("gini").get("2019").asDouble();
+            gini2 = json1.get(0).get("gini").get("2018").asDouble();
             capital2 = json1.get(0).get("capital") .get(0).asText();
             System.out.println(name2);
             System.out.println(gini2);
