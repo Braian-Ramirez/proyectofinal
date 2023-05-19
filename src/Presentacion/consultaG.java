@@ -37,6 +37,10 @@ public class consultaG {
     private JLabel poblacion2;
     private JLabel moneda2;
     private JLabel idioma2;
+    private JLabel ImagenEscudo;
+    private JLabel lblimagenBandera2;
+    private JLabel lblimagenEscudo2;
+    private JLabel lblMapa;
     private JPanel nombrepais;
 
     public consultaG() {
@@ -52,7 +56,6 @@ public class consultaG {
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
             AsociaciónImagenes asociaciónImagenes = new AsociaciónImagenes();
 
-            //System.out.println(consultaApiPaisesDTO.getFlag());
             try{
             consultaApiPaisesDTO.getPaisInfo(pais, pais2);
              NombrePais.setText(consultaApiPaisesDTO.getName());
@@ -60,20 +63,20 @@ public class consultaG {
              gini.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
              poblacion.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
              idioma.setText(consultaApiPaisesDTO.getIdioma());
-             ImagenBandera.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag()));
+             ImagenBandera.setIcon(asociaciónImagenes.procesaImagenBandera(consultaApiPaisesDTO.getFlag()));
+             ImagenEscudo.setIcon(asociaciónImagenes.procesaImagenBandera(consultaApiPaisesDTO.getShield()));
              NombrePais2.setText(consultaApiPaisesDTO.getName2());
              Capital2.setText(consultaApiPaisesDTO.getCapital2());
              Gini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
              poblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
              idioma2.setText(consultaApiPaisesDTO.getIdioma2());
-
-             //ImagenBandera.setIcon(asociaciónImagenes.getIcon());
-            }catch (Exception es){
+             lblimagenBandera2.setIcon(asociaciónImagenes.procesaImagenBandera2(consultaApiPaisesDTO.getFlag2()));
+             lblimagenEscudo2.setIcon(asociaciónImagenes.procesaImagenEscudo2(consultaApiPaisesDTO.getShield2()));
+                }catch (Exception es){
                 System.out.println(es);
             }
         }
     });
-
     BusquedaGPT.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -101,4 +104,7 @@ public class consultaG {
     public JPanel getPanel1() {
         return this.panel1;
     }
+
+
+
 }

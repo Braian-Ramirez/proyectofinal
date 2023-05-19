@@ -12,6 +12,7 @@ import java.net.URL;
 public class ConsultaApiPaisesDTO {
         private  String name;
         private  String capital;
+        private  double gini;
         private  String idioma;
         private  String mapa;
         private  String continente;
@@ -19,24 +20,24 @@ public class ConsultaApiPaisesDTO {
         private  double area;
         private  String zonaHoraria;
         private  double poblacion;
-        private  double gini;
         private  String flag;
         private  String shield;
-        private  String Name2;
-        private  String Capital2;
-        private  double Gini2;
-        private  String Mapa2;
-        private  String Continente2;
-        private  String Subregion2;
-        private  double Area2;
-        private  String ZonaHoraria2;
-        private  double Poblacion2;
-        private  String Flag2;
-        private  String Shield2;
-        private  String Idioma2;
-    private final String BASE_URL = "https://restcountries.com/v3.1/name/";
+        private  String name2;
+        private  String capital2;
+        private  double gini2;
+        private  String idioma2;
+        private  String mapa2;
+        private  String continente2;
+        private  String subregion2;
+        private  double area2;
+        private  String zonaHoraria2;
+        private  double poblacion2;
+        private  String flag2;
+        private  String shield2;
 
-        public  String getPaisInfo(String nombrePais,String nombrePais2) throws IOException {
+    private  final String BASE_URL = "https://restcountries.com/v3.1/name/";
+
+        public String getPaisInfo(String nombrePais,String nombrePais2) throws IOException {
             URL url = new URL(BASE_URL + nombrePais);
             URL url2 = new URL(BASE_URL + nombrePais2);
             System.out.println(BASE_URL + nombrePais);
@@ -80,117 +81,98 @@ public class ConsultaApiPaisesDTO {
             this.mapa = json.get(0).get("maps").get("googleMaps").asText();
             this.flag = json.get(0).get("flags") .get("png").asText();
             this.shield = json.get(0).get("coatOfArms") .get("png").asText();
-            System.out.println(name);
-            System.out.println(poblacion);
-            System.out.println(area);
-            System.out.println(zonaHoraria);
-            System.out.println(idioma);
-            System.out.println(continente);
-            System.out.println(subregion);
-            System.out.println(mapa);
-            System.out.println(flag);
-            System.out.println(shield);
+
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
-            this.Name2 = json1.get(0).get("name").get("common").asText();
-            this.Gini2 = json1.get(0).get("gini").get("2019").asDouble();
-            this.Capital2 = json1.get(0).get("capital") .get(0).asText();
-            this.Poblacion2 = json1.get(0).get("population").asDouble();
-            this.Area2 = json1.get(0).get("area").asDouble();
-            this.ZonaHoraria2 = json1.get(0).get("timezones").asText();
-            this.Continente2 = json1.get(0).get("region").asText();
-            this.Subregion2 = json1.get(0).get("subregion").asText();
-            this.Idioma2 = json1.get(0).get("languages").asText();
-            this.Mapa2 = json1.get(0).get("maps").get("googleMaps").asText();
-            this.Flag2 = json1.get(0).get("flags") .get("png").asText();
-            this.Shield2 = json1.get(0).get("coatOfArms") .get("png").asText();
-            System.out.println(Name2);
-            System.out.println(Gini2);
-            System.out.println(Capital2);
-            System.out.println(Poblacion2);
-            System.out.println(Flag2);
-            System.out.println(Shield2);
-            System.out.println(Area2);
-            System.out.println(ZonaHoraria2);
-            System.out.println(Idioma2);
-            System.out.println(Continente2);
-            System.out.println(Subregion2);
-            System.out.println(Mapa2);
-
+            this.name2 = json1.get(0).get("name").get("common").asText();
+            this.gini2 = json1.get(0).get("gini").get("2018").asDouble();
+            this.capital2 = json1.get(0).get("capital") .get(0).asText();
+            this.poblacion2 = json1.get(0).get("population").asDouble();
+            this.area2 = json1.get(0).get("area").asDouble();
+            this.zonaHoraria2 = json1.get(0).get("timezones").asText();
+            this.continente2 = json1.get(0).get("region").asText();
+            this.subregion2 = json1.get(0).get("subregion").asText();
+            this.idioma2 = json1.get(0).get("languages").asText();
+            this.mapa2 = json1.get(0).get("maps").get("googleMaps").asText();
+            this.flag2 = json1.get(0).get("flags") .get("png").asText();
+            this.shield2 = json1.get(0).get("coatOfArms") .get("png").asText();
 
             return " ";
         }
-        public String getName(){
+        public  String getName(){
             return name;
         }
 
-        public  String getCapital() {
+    public  String getCapital() {
         return capital;
     }
 
-        public double getGini() {
+    public  double getGini() {
         return gini;
     }
 
-       public  String getFlag() {
-        return flag;
-    }
+    public  double getPoblacion(){return poblacion;}
 
-      public String getShield() {
-        return shield;
-    }
-
-      public double getPoblacion(){return poblacion;}
-
-      public String getIdioma() {
+    public  String getIdioma() {
         return idioma;
     }
-      public String getMapa(){
+
+    public  String getMapa(){
             return mapa;
     }
 
-      public  String getContinente() {
+    public  String getContinente() {
         return continente;
     }
 
-      public  String getSubregion() {
+    public  String getSubregion() {
         return subregion;
     }
 
-    public String getName2() {
-        return Name2;
+    public  String getFlag() {
+        return flag;
+    }
+
+    public  String getShield() {
+        return shield;
+    }
+
+    public  String getName2() {
+        return name2;
     }
 
     public  String getCapital2() {
-        return Capital2;
+        return capital2;
     }
 
-    public double getGini2() {
-        return Gini2;
+    public  double getGini2() {
+        return gini2;
     }
 
-    public double getPoblacion2(){return Poblacion2;}
+    public  double getPoblacion2(){return poblacion2;}
 
-    public String getIdioma2() {
-        return Idioma2;
+    public  String getIdioma2() {
+        return idioma2;
     }
-    public String getMapa2(){
-        return Mapa2;
+
+    public  String getMapa2(){
+        return mapa2;
     }
 
     public  String getContinente2() {
-        return Continente2;
+        return continente2;
     }
 
     public  String getSubregion2() {
-        return Subregion2;
-    }
-    public  String getFlag2() {
-        return Flag2;
+        return subregion2;
     }
 
-    public String getShield2() {
-        return Shield2;
+    public  String getFlag2() {
+        return flag2;
+    }
+
+    public  String getShield2() {
+        return shield2;
     }
 }
 
