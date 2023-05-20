@@ -81,11 +81,14 @@ public class ConsultaApiPaisesDTO {
             this.mapa = json.get(0).get("maps").get("googleMaps").asText();
             this.flag = json.get(0).get("flags") .get("png").asText();
             this.shield = json.get(0).get("coatOfArms") .get("png").asText();
+            System.out.println(poblacion);
+            System.out.println(continente);
+            System.out.println(area);
 
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
             this.name2 = json1.get(0).get("name").get("common").asText();
-            this.gini2 = json1.get(0).get("gini").get("2019").asDouble();
+            this.gini2 = json1.get(0).get("gini").get("2018").asDouble();
             this.capital2 = json1.get(0).get("capital") .get(0).asText();
             this.poblacion2 = json1.get(0).get("population").asDouble();
             this.area2 = json1.get(0).get("area").asDouble();
@@ -96,7 +99,7 @@ public class ConsultaApiPaisesDTO {
             this.mapa2 = json1.get(0).get("maps").get("googleMaps").asText();
             this.flag2 = json1.get(0).get("flags") .get("png").asText();
             this.shield2 = json1.get(0).get("coatOfArms") .get("png").asText();
-
+            System.out.println(flag2);
             return " ";
         }
         public  String getName(){
@@ -120,6 +123,8 @@ public class ConsultaApiPaisesDTO {
     public  String getMapa(){
             return mapa;
     }
+
+    public double getArea(){ return  area;}
 
     public  String getContinente() {
         return continente;
@@ -150,6 +155,8 @@ public class ConsultaApiPaisesDTO {
     }
 
     public  double getPoblacion2(){return poblacion2;}
+
+    public double getArea2(){ return area2;}
 
     public  String getIdioma2() {
         return idioma2;

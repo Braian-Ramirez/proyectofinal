@@ -7,10 +7,6 @@ import Logica.ConsultaChatGptDTO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
-import static Logica.ConsultaChatGptDTO.getConsultaGpt;
 
 public class consultaG {
     public JTextField paisTextField;
@@ -19,37 +15,29 @@ public class consultaG {
     private JButton buscarButton;
     private JTabbedPane tabbedPane1;
     private JTabbedPane tabbedPane2;
-    private JComboBox comboBox1;
-    private JTextField BusquedaGPT;
-    private JTextPane RespuestaGpt;
-    private JTextField textField2;
-    private JTextPane textPane2;
-    private JLabel NombrePais;
-    private JLabel Capital;
-    private JLabel gini;
-    private JLabel NombrePais2;
-    private JLabel Capital2;
-    private JLabel Gini2;
-    private JLabel ImagenBandera;
-    private JLabel poblacion;
-    private JLabel idioma;
-    private JLabel poblacion2;
-    private JLabel moneda2;
-    private JLabel idioma2;
-    private JLabel ImagenEscudo;
-    private JLabel lblimagenBandera2;
+    private JLabel lblcapital1;
+    private JLabel lblgini1;
+    private JLabel lblpoblacion1;
+    private JLabel lblarea1;
+    private JLabel lblcontinente1;
+    private JLabel lblimaganBandera1;
+    private JLabel lblimagenEscudo1;
+    private JLabel lblnombrePais2;
+    private JLabel lblcapital2;
+    private JLabel lblgini2;
+    private JLabel lblpoblacion2;
+    private JLabel lblarea2;
     private JLabel lblimagenEscudo2;
-    private JLabel lblRespuestaGpt;
-    private JButton button2;
-    private JLabel NombrePais1;
-    private JLabel Capital1;
-    private JLabel Gine1;
-    private JLabel Población1;
-    private JLabel Divisa1;
-    private JLabel Idioma1;
-    private JLabel lblimagenBandera1;
-    private JLabel lblMapa;
-    private JPanel nombrepais;
+    private JButton consultarButton;
+    private JLabel lblResultadoGPT;
+    private JTextField txtconsultaGpt;
+    private JLabel lblcontinente2;
+    private JLabel lblRespuestaGpt2;
+    private JLabel lblimagenBandera2;
+    private JTextField txtConsultaGpt2;
+    private JButton consultarButton1;
+    private JLabel lblnombrePais1;
+
 
     public consultaG() {
     buscarButton.addActionListener(new ActionListener() {
@@ -66,18 +54,20 @@ public class consultaG {
 
             try{
             consultaApiPaisesDTO.getPaisInfo(pais, pais2);
-             NombrePais1.setText(consultaApiPaisesDTO.getName());
-             Capital1.setText(consultaApiPaisesDTO.getCapital());
-             Gine1.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
-             Población1.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
-             Idioma1.setText(consultaApiPaisesDTO.getIdioma());
-             //ImagenBandera.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag(), true));
-             //ImagenEscudo.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield(), false));
-             NombrePais2.setText(consultaApiPaisesDTO.getName2());
-             Capital2.setText(consultaApiPaisesDTO.getCapital2());
-             Gini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
-             poblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
-             idioma2.setText(consultaApiPaisesDTO.getIdioma2());
+             lblnombrePais1.setText(consultaApiPaisesDTO.getName());
+             lblcapital1.setText(consultaApiPaisesDTO.getCapital());
+             lblgini1.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
+             lblpoblacion1.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
+             lblarea1.setText(String.valueOf(consultaApiPaisesDTO.getArea()));
+             lblcontinente1.setText(consultaApiPaisesDTO.getContinente());
+             lblimaganBandera1.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag(), true));
+             lblimagenEscudo1.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield(), false));
+             lblnombrePais2.setText(consultaApiPaisesDTO.getName2());
+             lblcapital2.setText(consultaApiPaisesDTO.getCapital2());
+             lblgini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
+             lblpoblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
+             lblarea2.setText(String.valueOf(consultaApiPaisesDTO.getArea2()));
+             lblcontinente2.setText(consultaApiPaisesDTO.getContinente());
              lblimagenBandera2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag2(), true));
              lblimagenEscudo2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield2(), false));
                 }catch (Exception es){
@@ -87,6 +77,18 @@ public class consultaG {
     });
 
 
+        consultarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Excelente");
+                String consulta = txtconsultaGpt.getText();
+                BuscadorDTO buscadorDTO = new BuscadorDTO();
+                buscadorDTO.setBusquedaGPT(consulta);
+                ConsultaChatGptDTO consultaChatGptDTO = new ConsultaChatGptDTO();
+                String resultado = consultaChatGptDTO.getConsultaGpt(consulta);
+                lblResultadoGPT.setText(resultado);
+            }
+        });
     }
     public JPanel getPanel1() {
         return this.panel1;
