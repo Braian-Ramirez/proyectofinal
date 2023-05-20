@@ -63,15 +63,15 @@ public class consultaG {
              gini.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
              poblacion.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
              idioma.setText(consultaApiPaisesDTO.getIdioma());
-             ImagenBandera.setIcon(asociaciónImagenes.procesaImagenBandera(consultaApiPaisesDTO.getFlag()));
-             ImagenEscudo.setIcon(asociaciónImagenes.procesaImagenBandera(consultaApiPaisesDTO.getShield()));
+             ImagenBandera.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag(), true));
+             ImagenEscudo.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield(), false));
              NombrePais2.setText(consultaApiPaisesDTO.getName2());
              Capital2.setText(consultaApiPaisesDTO.getCapital2());
              Gini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
              poblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
              idioma2.setText(consultaApiPaisesDTO.getIdioma2());
-             lblimagenBandera2.setIcon(asociaciónImagenes.procesaImagenBandera2(consultaApiPaisesDTO.getFlag2()));
-             lblimagenEscudo2.setIcon(asociaciónImagenes.procesaImagenEscudo2(consultaApiPaisesDTO.getShield2()));
+             lblimagenBandera2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag2(), true));
+             lblimagenEscudo2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield2(), false));
                 }catch (Exception es){
                 System.out.println(es);
             }

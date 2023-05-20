@@ -399,7 +399,7 @@
               </hspacer>
               <component id="a674a" class="javax.swing.JLabel" binding="ImagenBandera">
                 <constraints>
-                  <grid row="0" column="4" row-span="6" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="5" row-span="5" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value=""/>
