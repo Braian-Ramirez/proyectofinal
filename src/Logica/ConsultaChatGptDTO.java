@@ -18,7 +18,7 @@ public class ConsultaChatGptDTO {
     consultaG consultaG = new consultaG();
     public static String getConsultaGpt(String consulta) {
         String apiUrl = "https://api.openai.com/v1/completions";
-        String openaiApikey = "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";
+        String openaiApikey = "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";
         String text = null;
         {
             URL url = null;
@@ -41,7 +41,8 @@ public class ConsultaChatGptDTO {
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Authorization", "Bearer " + openaiApikey);
             connection.setDoOutput(true);
-            String jsonInputString = "{\"model\":\"text-davinci-003\",\"prompt\":\""+consulta+"\",\"max_tokens\":70,\"temperature\":0.8}";
+//            String jsonInputString = "{\"model\":\"text-davinci-003\",\"prompt\":\""+consulta+"\",\"max_tokens\":70,\"temperature\":0.8}";
+            String jsonInputString = "{\"model\":\"text-davinci-003\",\"prompt\":\"digame que dia es hoy en Colombia\",\"max_tokens\":70,\"temperature\":0.8}";
 
             try (OutputStream outputStream = connection.getOutputStream()) {
                 outputStream.write(jsonInputString.getBytes());

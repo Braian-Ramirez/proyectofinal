@@ -20,7 +20,6 @@ public class consultaG {
     private JTabbedPane tabbedPane1;
     private JTabbedPane tabbedPane2;
     private JComboBox comboBox1;
-    private JComboBox comboBox2;
     private JTextField BusquedaGPT;
     private JTextPane RespuestaGpt;
     private JTextField textField2;
@@ -40,6 +39,15 @@ public class consultaG {
     private JLabel ImagenEscudo;
     private JLabel lblimagenBandera2;
     private JLabel lblimagenEscudo2;
+    private JLabel lblRespuestaGpt;
+    private JButton button2;
+    private JLabel NombrePais1;
+    private JLabel Capital1;
+    private JLabel Gine1;
+    private JLabel Población1;
+    private JLabel Divisa1;
+    private JLabel Idioma1;
+    private JLabel lblimagenBandera1;
     private JLabel lblMapa;
     private JPanel nombrepais;
 
@@ -58,13 +66,13 @@ public class consultaG {
 
             try{
             consultaApiPaisesDTO.getPaisInfo(pais, pais2);
-             NombrePais.setText(consultaApiPaisesDTO.getName());
-             Capital.setText(consultaApiPaisesDTO.getCapital());
-             gini.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
-             poblacion.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
-             idioma.setText(consultaApiPaisesDTO.getIdioma());
-             ImagenBandera.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag(), true));
-             ImagenEscudo.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield(), false));
+             NombrePais1.setText(consultaApiPaisesDTO.getName());
+             Capital1.setText(consultaApiPaisesDTO.getCapital());
+             Gine1.setText(String.valueOf(consultaApiPaisesDTO.getGini()));
+             Población1.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
+             Idioma1.setText(consultaApiPaisesDTO.getIdioma());
+             //ImagenBandera.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag(), true));
+             //ImagenEscudo.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield(), false));
              NombrePais2.setText(consultaApiPaisesDTO.getName2());
              Capital2.setText(consultaApiPaisesDTO.getCapital2());
              Gini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
@@ -77,28 +85,7 @@ public class consultaG {
             }
         }
     });
-    BusquedaGPT.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                System.out.println("que bueno");
-                String BuscadorGPT = BusquedaGPT.getText();
-                ConsultaChatGptDTO consultaChatGptDTO = new ConsultaChatGptDTO();
-                try{
-                    getConsultaGpt(BuscadorGPT);
-                    String resultado = getConsultaGpt(BusquedaGPT.getText());
-                    RespuestaGpt.setText(resultado);
 
-                }catch (Exception es){
-                    System.out.println(es);
-                }
-
-                BuscadorDTO buscador = new BuscadorDTO();
-                buscador.setBusquedaGPT(BuscadorGPT);
-
-
-                super.keyTyped(e);
-            }
-        });
 
     }
     public JPanel getPanel1() {
