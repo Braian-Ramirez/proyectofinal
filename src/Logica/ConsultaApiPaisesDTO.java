@@ -24,7 +24,7 @@ public class ConsultaApiPaisesDTO {
         private  String shield;
         private  String name2;
         private  String capital2;
-        private  double gini2;
+        private  double gini2 = 0;
         private  String idioma2;
         private  String mapa2;
         private  String continente2;
@@ -81,9 +81,9 @@ public class ConsultaApiPaisesDTO {
             this.mapa = json.get(0).get("maps").get("googleMaps").asText();
             this.flag = json.get(0).get("flags") .get("png").asText();
             this.shield = json.get(0).get("coatOfArms") .get("png").asText();
-            System.out.println(poblacion);
-            System.out.println(continente);
-            System.out.println(area);
+            //System.out.println(poblacion);
+            //System.out.println(continente);
+            //System.out.println(area);
 
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
@@ -99,7 +99,7 @@ public class ConsultaApiPaisesDTO {
             this.mapa2 = json1.get(0).get("maps").get("googleMaps").asText();
             this.flag2 = json1.get(0).get("flags") .get("png").asText();
             this.shield2 = json1.get(0).get("coatOfArms") .get("png").asText();
-            System.out.println(flag2);
+            System.out.println(continente2);
             return " ";
         }
         public  String getName(){

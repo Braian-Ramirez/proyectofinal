@@ -67,7 +67,7 @@ public class consultaG {
              lblgini2.setText(String.valueOf(consultaApiPaisesDTO.getGini2()));
              lblpoblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
              lblarea2.setText(String.valueOf(consultaApiPaisesDTO.getArea2()));
-             lblcontinente2.setText(consultaApiPaisesDTO.getContinente());
+             lblcontinente2.setText(consultaApiPaisesDTO.getContinente2());
              lblimagenBandera2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag2(), true));
              lblimagenEscudo2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield2(), false));
                 }catch (Exception es){
