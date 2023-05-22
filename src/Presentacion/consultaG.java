@@ -37,6 +37,8 @@ public class consultaG {
     private JTextField txtConsultaGpt2;
     private JButton consultarButton1;
     private JLabel lblnombrePais1;
+    private JLabel lblSubregion1;
+    private JLabel lblSubregion2;
 
 
     public consultaG() {
@@ -60,6 +62,7 @@ public class consultaG {
              lblpoblacion1.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion()));
              lblarea1.setText(String.valueOf(consultaApiPaisesDTO.getArea()));
              lblcontinente1.setText(consultaApiPaisesDTO.getContinente());
+             lblSubregion1.setText(consultaApiPaisesDTO.getSubregion());
              lblimaganBandera1.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag(), true));
              lblimagenEscudo1.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield(), false));
              lblnombrePais2.setText(consultaApiPaisesDTO.getName2());
@@ -68,6 +71,7 @@ public class consultaG {
              lblpoblacion2.setText(String.valueOf(consultaApiPaisesDTO.getPoblacion2()));
              lblarea2.setText(String.valueOf(consultaApiPaisesDTO.getArea2()));
              lblcontinente2.setText(consultaApiPaisesDTO.getContinente2());
+             lblSubregion2.setText(consultaApiPaisesDTO.getSubregion2());
              lblimagenBandera2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getFlag2(), true));
              lblimagenEscudo2.setIcon(asociaciónImagenes.procesaImagen(consultaApiPaisesDTO.getShield2(), false));
                 }catch (Exception es){
