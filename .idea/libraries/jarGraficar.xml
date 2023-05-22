@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="jarGraficar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/jarGraficar/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jarGraficar/jfreechart-1.0.19-experimental.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jarGraficar/jfreechart-1.0.19-swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jarGraficar/jfreechart-1.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jarGraficar/jfreesvg-2.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/src/jarGraficar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/jarGraficar" recursive="false" />
+  </library>
+</component>
