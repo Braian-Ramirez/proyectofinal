@@ -39,6 +39,8 @@ public class consultaG {
     private JLabel lblnombrePais1;
     private JLabel lblSubregion1;
     private JLabel lblSubregion2;
+    private JButton generarGraficaButton;
+    private JButton guardarBusquedaEnBaseButton;
 
 
     public consultaG() {

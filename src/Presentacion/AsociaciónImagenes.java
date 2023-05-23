@@ -29,47 +29,5 @@ public class AsociaciónImagenes {
 
         }
     }
-
-    public ImageIcon procesaImagenEscudo(String urlImage) throws MalformedURLException {
-
-        {
-            URL url = new URL(urlImage);
-            ImageIcon imagen = new ImageIcon(url);
-            int ancho = 300;
-            int alto = 300;
-            Image img = imagen.getImage().getScaledInstance( ancho, alto, Image.SCALE_SMOOTH);
-            ImageIcon imagenEscalada = new ImageIcon( img );
-            return imagenEscalada;
-
-        }
-    }
-    public ImageIcon procesaImagenBandera2(String urlImage) throws MalformedURLException {
-
-        {
-            URL url = new URL(urlImage);
-            ImageIcon imagen = new ImageIcon(url);
-            int ancho = 200;
-            int alto = 200;
-            Image img = imagen.getImage().getScaledInstance( ancho, alto, Image.SCALE_SMOOTH);
-            ImageIcon imagenEscalada = new ImageIcon( img );
-            return imagenEscalada;
-
-        }
-    }
-    public ImageIcon procesaImagenEscudo2(String urlImage) throws MalformedURLException {
-
-        {
-            URL url = new URL(urlImage);
-            ImageIcon imagen = new ImageIcon(url);
-            int ancho = 200;
-            int alto = 200;
-            Image img = imagen.getImage().getScaledInstance( ancho, alto, Image.SCALE_SMOOTH);
-            ImageIcon imagenEscalada = new ImageIcon( img );
-            return imagenEscalada;
-
-        }
-    }
-
-
 }
 
