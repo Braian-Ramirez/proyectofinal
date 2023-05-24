@@ -12,18 +12,21 @@ public class BuscadorDAO {
     private  void crearTabla(){
         try{
             Statement statement = this.connection.createStatement();
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS consulta_paises( id INTEGER PRIMARY KEY, pais TEXT, capital TEXT, gini INTEGER, moneda TEXT)");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS consulta_paises( id INTEGER PRIMARY KEY, pais TEXT, capital TEXT, gini DOUBLE, poblacion DOUBLE, area DOUBLE, continente TEXT, subregion TEXT)");
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
-    public boolean crear(String pais, String capital, int gini, String moneda){
+    public boolean crear(String pais, String capital, double gini, double poblacion, double area, String continente, String subregion){
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(" INSERT INTO consulta_paises( pais, capital, gini, moneda) VALUES (?, ?, ?, ?)");
+            PreparedStatement preparedStatement = connection.prepareStatement(" INSERT INTO consulta_paises( pais, capital, gini, poblacion, area, continente, subregion) VALUES (?, ?, ?, ?, ?, ?, ?)");
             preparedStatement.setString(1, pais);
             preparedStatement.setString(2, capital);
-            preparedStatement.setInt(3, gini);
-            preparedStatement.setString(4, moneda);
+            preparedStatement.setDouble(3, gini);
+            preparedStatement.setDouble(4, poblacion);
+            preparedStatement.setDouble(5,area);
+            preparedStatement.setString(6,continente);
+            preparedStatement.setString(7,subregion);
             preparedStatement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();

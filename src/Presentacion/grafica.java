@@ -21,12 +21,12 @@ public class grafica {
         @Override
         public void actionPerformed(ActionEvent e) {
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
-            double valor1 = consultaApiPaisesDTO.getGini();
-            double valor2 = consultaApiPaisesDTO.getGini2();
+            double valor1 = 45.9;
+            double valor2 =  37.3;
 
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-            dataset.addValue(valor1, consultaApiPaisesDTO.getName(), "País");
-            dataset.addValue(valor2, consultaApiPaisesDTO.getName2(), "País");
+            dataset.addValue(valor1, "Colombia", "País");
+            dataset.addValue(valor2, "Peru", "País");
 
             JFreeChart chart = ChartFactory.createBarChart3D(
                     "Gráfico de Barras Gini",

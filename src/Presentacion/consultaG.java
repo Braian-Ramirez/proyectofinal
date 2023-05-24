@@ -95,6 +95,26 @@ public class consultaG {
                 lblResultadoGPT.setText(resultado);
             }
         });
+        generarGraficaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
+                grafica graficar = new grafica();
+                frame.setContentPane(graficar.getPanelGrafica1());
+                frame.setTitle("Grafica");
+                frame.setSize(600, 600);
+                frame.setVisible(true);
+
+
+            }
+        });
+        guardarBusquedaEnBaseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
     public JPanel getPanel1() {
         return this.panel1;

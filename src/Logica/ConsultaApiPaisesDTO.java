@@ -75,7 +75,7 @@ public class ConsultaApiPaisesDTO {
             if( getName().equals("Italy") || getName().equals("Somalia") || getName().equals("Tanzania") || getName().equals("Iceland") || getName().equals("United Kingdom") || getName().equals("Ireland") || getName().equals("Canada") || getName().equals("Chile")|| getName().equals("Egypt")){
                 this.gini = json.get(0).get("gini").get("2017").asDouble();
             }
-            if( getName().equals("Germany") || getName().equals("Uganda") || getName().equals("South Korea") || getName().equals("Israel") || getName().equals("South Sudan")){
+            if( getName().equals("Germany") ||  getName().equals("North Korea") || getName().equals("Uganda") || getName().equals("South Korea") || getName().equals("Israel") || getName().equals("South Sudan")){
                 this.gini = json.get(0).get("gini").get("2016").asDouble();
             }
             if( getName().equals("Malaysia") || getName().equals("Kenya") || getName().equals("Zambia") || getName().equals("Ethiopia")){
@@ -102,6 +102,7 @@ public class ConsultaApiPaisesDTO {
             if( getName().equals("Syria")){
                 this.gini = json.get(0).get("gini").get("2003").asDouble();
             }
+            System.out.println(gini);
             this.capital = json.get(0).get("capital") .get(0).asText();
             this.poblacion = json.get(0).get("population").asDouble();
             this.area = json.get(0).get("area").asDouble();
@@ -123,7 +124,7 @@ public class ConsultaApiPaisesDTO {
             if( getName2().equals("Italy") || getName2().equals("Somalia") || getName2().equals("Tanzania") || getName2().equals("Iceland") || getName2().equals("United Kingdom") || getName2().equals("Ireland") || getName2().equals("Canada") || getName2().equals("Chile") || getName2().equals("Egypt")){
                 this.gini2 = json1.get(0).get("gini").get("2017").asDouble();
             }
-            if( getName2().equals("Germany") || getName2().equals("Uganda") || getName2().equals("South Korea") || getName2().equals("Israel") || getName2().equals("South Sudan")){
+            if( getName2().equals("Germany") ||  getName().equals("North Korea") || getName2().equals("Uganda") || getName2().equals("South Korea") || getName2().equals("Israel") || getName2().equals("South Sudan")){
                 this.gini2 = json1.get(0).get("gini").get("2016").asDouble();
             }
             if( getName2().equals("Malaysia") || getName2().equals("Kenya") || getName2().equals("Zambia") || getName2().equals("Ethiopia")){
@@ -150,6 +151,7 @@ public class ConsultaApiPaisesDTO {
             if( getName2().equals("Syria")){
                 this.gini2 = json1.get(0).get("gini").get("2003").asDouble();
             }
+            System.out.println(gini2);
             this.capital2 = json1.get(0).get("capital") .get(0).asText();
             this.poblacion2 = json1.get(0).get("population").asDouble();
             this.area2 = json1.get(0).get("area").asDouble();
