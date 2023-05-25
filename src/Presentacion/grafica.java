@@ -21,8 +21,8 @@ public class grafica {
         @Override
         public void actionPerformed(ActionEvent e) {
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
-            double valor1 = 45.9;
-            double valor2 =  37.3;
+            double valor1 = 51.7;
+            double valor2 =  consultaApiPaisesDTO.getGini2();
 
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
             dataset.addValue(valor1, "Colombia", "País");
