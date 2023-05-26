@@ -9,7 +9,7 @@ public class Conexion {
 
     public Conexion(){
         try{
-            Class.forName("org.sqlite.");
+            Class.forName("org.sqlite.JDBC");
             this.connection = DriverManager.getConnection("jdbc:sqlite:proyectofinal.db");
         }catch(SQLException | ClassNotFoundException e ){
             e.printStackTrace();

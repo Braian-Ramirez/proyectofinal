@@ -3,6 +3,7 @@ package Presentacion;
 import Logica.BuscadorDTO;
 import Logica.ConsultaApiPaisesDTO;
 import Logica.ConsultaChatGptDTO;
+import Persistencia.BuscadorDAO;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -100,7 +101,7 @@ public class consultaG {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
                 frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
-                grafica graficar = new grafica();
+                grafica graficar = new grafica(paisTextField.getText(), segundoPaísTextField.getText());
                 frame.setContentPane(graficar.getPanelGrafica1());
                 frame.setTitle("Grafica");
                 frame.setSize(600, 600);
@@ -112,6 +113,21 @@ public class consultaG {
         guardarBusquedaEnBaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
+            }
+        });
+        consultarButton1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Excelente");
+                String consulta = txtConsultaGpt2.getText();
+                BuscadorDTO buscadorDTO = new BuscadorDTO();
+                buscadorDTO.setBusquedaGPT(consulta);
+                ConsultaChatGptDTO consultaChatGptDTO = new ConsultaChatGptDTO();
+                String resultado = consultaChatGptDTO.getConsultaGpt(consulta);
+                lblRespuestaGpt2.setText(resultado);
 
             }
         });

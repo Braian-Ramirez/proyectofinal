@@ -39,7 +39,7 @@ public class BuscadorDAO {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM consulta_paises ");
 
             while ( resultSet.next()){
-                System.out.println(resultSet.getString("pais") + " " + resultSet.getString("capital") + " " + resultSet.getInt("gini") + " " + resultSet.getString("moneda"));
+                System.out.println(resultSet.getString("pais") + " " + resultSet.getString("capital") + " " + resultSet.getDouble("gini") + " " + resultSet.getDouble("poblacion") + " " + resultSet.getDouble("area") + " " + resultSet.getString("continente") + " " + resultSet.getString("subregion"));
                 }
         }catch ( SQLException e){
             e.printStackTrace();
@@ -51,7 +51,7 @@ public class BuscadorDAO {
             ResultSet resultSet = statement.executeQuery("SELECT pais FROM consulta_paises");
 
             while (( resultSet.next())){
-                System.out.println(resultSet.getString("pais") + " " + resultSet.getString("capital") + " " + resultSet.getInt("gini") + " " + resultSet.getString("moneda"));
+                System.out.println(resultSet.getString("pais") + " " + resultSet.getString("capital") + " " + resultSet.getDouble("gini") + " " + resultSet.getDouble("poblacion") + " " + resultSet.getDouble("area") + " " + resultSet.getString("continente") + " " + resultSet.getString("subregion"));
             }
         }catch( SQLException e){
             e.printStackTrace();
