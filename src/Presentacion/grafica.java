@@ -22,8 +22,8 @@ public class grafica {
         public void actionPerformed(ActionEvent e) {
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
             consultaG consultaG = new consultaG();
-            double valor1 = consultaApiPaisesDTO.getGini();
-            double valor2 =  consultaApiPaisesDTO.getGini2();
+            double valor1 = Double.parseDouble(String.valueOf(consultaG.getLblgini1()));
+            double valor2 =  Double.parseDouble(String.valueOf(consultaG.getLblgini2()));
 
             System.out.println(consultaApiPaisesDTO.getGini2());
 

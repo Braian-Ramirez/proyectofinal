@@ -3,7 +3,7 @@ package Presentacion;
 import Logica.BuscadorDTO;
 import Logica.ConsultaApiPaisesDTO;
 import Logica.ConsultaChatGptDTO;
-import Persistencia.BuscadorDAO;
+import Persistencia.ArchivoDAO;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -42,6 +42,7 @@ public class consultaG {
     private JLabel lblSubregion2;
     private JButton generarGraficaButton;
     private JButton guardarBusquedaEnBaseButton;
+    private JButton ButtonGenerarArchivo;
 
 
     public consultaG() {
@@ -131,11 +132,26 @@ public class consultaG {
 
             }
         });
+        ButtonGenerarArchivo.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArchivoDAO archivoDAO = new ArchivoDAO();
+                archivoDAO.escribirArchivo(lblnombrePais1.getText(), lblcapital1.getText(), Double.parseDouble(lblgini1.getText()), Double.parseDouble(lblpoblacion1.getText()), Double.parseDouble(lblarea1.getText()), lblcontinente1.getText(),lblSubregion1.getText());
+                archivoDAO.escribirArchivo(lblnombrePais2.getText(), lblcapital2.getText(), Double.parseDouble(lblgini2.getText()), Double.parseDouble(lblpoblacion2.getText()), Double.parseDouble(lblarea2.getText()), lblcontinente2.getText(),lblSubregion2.getText());
+
+            }
+        });
     }
     public JPanel getPanel1() {
         return this.panel1;
     }
 
+    public JLabel getLblgini1() {
+        return lblgini1;
+    }
 
-
+    public JLabel getLblgini2() {
+        return lblgini2;
+    }
 }
