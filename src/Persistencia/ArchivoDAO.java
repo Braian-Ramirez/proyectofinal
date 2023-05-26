@@ -8,8 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ArchivoDAO {
-     public void escribirArchivo(String pais, String capital, double gini, double poblacion, double area, String continente, String subregion){
-         File archivo = new File(pais);
+     public void escribirArchivo(String pais, String capital, double gini, double poblacion,
+                                 double area, String continente, String subregion){
+         File archivo = new File("archivos_paises/" + pais);
          try{
              FileWriter escritor = new FileWriter(archivo);
              escritor.write(pais);
@@ -23,7 +24,8 @@ public class ArchivoDAO {
              JOptionPane.showMessageDialog(null,"Archivo creado correctamente");
 
          }catch (IOException e){
-             JOptionPane.showMessageDialog(null, "Error al guardar el archivo","Error", JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Error al guardar el archivo",
+                     "Error", JOptionPane.ERROR_MESSAGE);
          }
 
      }

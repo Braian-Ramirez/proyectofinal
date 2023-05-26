@@ -16,16 +16,15 @@ public class grafica {
     private JPanel PanelGrafica;
 
 
-    public grafica(String pais1, String pais2) {
+    public grafica(String pais1, String pais2, String gini1, String gini2) {
     buttonGenerarGrafica.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
-            consultaG consultaG = new consultaG();
-            double valor1 = Double.parseDouble(String.valueOf(consultaG.getLblgini1()));
-            double valor2 =  Double.parseDouble(String.valueOf(consultaG.getLblgini2()));
+            double valor1 = Double.parseDouble(gini1);
+            double valor2 = Double.parseDouble(gini2);
 
-            System.out.println(consultaApiPaisesDTO.getGini2());
+
 
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
             dataset.addValue(valor1, pais1, "País");

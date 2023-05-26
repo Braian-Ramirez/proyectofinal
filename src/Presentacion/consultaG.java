@@ -3,6 +3,7 @@ package Presentacion;
 import Logica.BuscadorDTO;
 import Logica.ConsultaApiPaisesDTO;
 import Logica.ConsultaChatGptDTO;
+import Logica.PaisesDTO;
 import Persistencia.ArchivoDAO;
 
 import javax.swing.*;
@@ -102,7 +103,12 @@ public class consultaG {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
                 frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
-                grafica graficar = new grafica(paisTextField.getText(), segundoPaísTextField.getText());
+                grafica graficar = new grafica(
+                        paisTextField.getText(),
+                        segundoPaísTextField.getText(),
+                        lblgini1.getText(),
+                        lblgini2.getText()
+                );
                 frame.setContentPane(graficar.getPanelGrafica1());
                 frame.setTitle("Grafica");
                 frame.setSize(600, 600);
@@ -115,7 +121,29 @@ public class consultaG {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
+                PaisesDTO paisesDTO = new PaisesDTO();
+                boolean result = paisesDTO.crear(lblnombrePais1.getText(),
+                        lblcapital1.getText(),
+                        Double.parseDouble(lblgini1.getText()),
+                        Double.parseDouble(lblpoblacion1.getText()),
+                        Double.parseDouble(lblarea1.getText()),
+                        lblcontinente1.getText(),
+                        lblSubregion1.getText());
 
+                boolean result2 = paisesDTO.crear(lblnombrePais2.getText(),
+                        lblcapital2.getText(),
+                        Double.parseDouble(lblgini2.getText()),
+                        Double.parseDouble(lblpoblacion2.getText()),
+                        Double.parseDouble(lblarea2.getText()),
+                        lblcontinente2.getText(),
+                        lblSubregion2.getText());
+
+                if(result || result2 ) {
+                    JOptionPane.showMessageDialog(panel1, " Se guardo con exito");
+                }else{
+                    JOptionPane.showMessageDialog(panel1, " Error");
+                }
             }
         });
         consultarButton1.addActionListener(new ActionListener() {
@@ -137,9 +165,13 @@ public class consultaG {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArchivoDAO archivoDAO = new ArchivoDAO();
-                archivoDAO.escribirArchivo(lblnombrePais1.getText(), lblcapital1.getText(), Double.parseDouble(lblgini1.getText()), Double.parseDouble(lblpoblacion1.getText()), Double.parseDouble(lblarea1.getText()), lblcontinente1.getText(),lblSubregion1.getText());
-                archivoDAO.escribirArchivo(lblnombrePais2.getText(), lblcapital2.getText(), Double.parseDouble(lblgini2.getText()), Double.parseDouble(lblpoblacion2.getText()), Double.parseDouble(lblarea2.getText()), lblcontinente2.getText(),lblSubregion2.getText());
-
+                archivoDAO.escribirArchivo(lblnombrePais1.getText(), lblcapital1.getText(),
+                        Double.parseDouble(lblgini1.getText()),
+                        Double.parseDouble(lblpoblacion1.getText()),
+                        Double.parseDouble(lblarea1.getText()), lblcontinente1.getText(),lblSubregion1.getText());
+                archivoDAO.escribirArchivo(lblnombrePais2.getText(), lblcapital2.getText(),
+                        Double.parseDouble(lblgini2.getText()), Double.parseDouble(lblpoblacion2.getText()),
+                        Double.parseDouble(lblarea2.getText()), lblcontinente2.getText(),lblSubregion2.getText());
             }
         });
     }

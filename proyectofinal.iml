@@ -11,5 +11,7 @@
     <orderEntry type="library" name="sqlite-jdbc-3.7.21" level="project" />
     <orderEntry type="library" name="jackson-annotations-2.15.0-rc2" level="project" />
     <orderEntry type="library" name="jarGraficar" level="project" />
+    <orderEntry type="library" name="jar" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.7.22" level="project" />
   </component>
 </module>

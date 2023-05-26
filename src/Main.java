@@ -10,7 +10,7 @@ public class Main {
         frame.setContentPane(gini.getPanel1());
         frame.pack();
         frame.setTitle("Busca tu país info");
-        frame.setSize(800,800);
+        frame.setSize(1200,800);
         frame.setVisible(true);
         System.out.println("hola mundo ");
     }

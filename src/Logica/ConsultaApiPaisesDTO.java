@@ -66,31 +66,51 @@ public class ConsultaApiPaisesDTO {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode json = objectMapper.readTree(response.toString());
             this.name = json.get(0).get("name").get("common").asText();
-            if( getName().equals("Peru") || getName().equals("Dominican Republic") || getName().equals("Honduras") || getName().equals("Zimbabwe") || getName().equals("Indonesia") || getName().equals("Thailand") || getName().equals("Ukraine") || getName().equals("Armenia") || getName().equals("Turkey") || getName().equals("Bolivia") || getName().equals("Argentina") || getName().equals("Colombia") || getName().equals("Brazil") || getName().equals("Panama") || getName().equals("Paraguay") || getName().equals("Uruguay") || getName().equals("El Salvador") || getName().equals("Ecuador") ){
+            if( getName().equals("Peru") || getName().equals("Dominican Republic") || getName().equals("Honduras") ||
+                    getName().equals("Zimbabwe") || getName().equals("Indonesia") || getName().equals("Thailand") ||
+                    getName().equals("Ukraine") || getName().equals("Armenia") || getName().equals("Turkey") ||
+                    getName().equals("Bolivia") || getName().equals("Argentina") || getName().equals("Colombia") ||
+                    getName().equals("Brazil") || getName().equals("Panama") || getName().equals("Paraguay") ||
+                    getName().equals("Uruguay") || getName().equals("El Salvador") || getName().equals("Ecuador") ){
                 this.gini = json.get(0).get("gini").get("2019").asDouble();
             }
-            if( getName().equals("Mexico") || getName().equals("Nigeria") || getName().equals("Angola") || getName().equals("Laos") || getName().equals("Kazakhstan") || getName().equals("Philippines") || getName().equals("Pakistan") || getName().equals("Mongolia") ||getName().equals("Finland") || getName().equals("Croatia") ||getName().equals("Hungary") || getName().equals("Netherlands") || getName().equals("Belgium") || getName().equals("Poland") || getName().equals("Denmark") || getName().equals("Norway") || getName().equals("Greece") || getName().equals("Romania") || getName().equals("Sweden") || getName().equals("Switzerland") ||getName().equals("Russia") || getName().equals("Spain") || getName().equals("France") || getName().equals("Portugal") || getName().equals("United States")){
+            if( getName().equals("Mexico") || getName().equals("Nigeria") || getName().equals("Angola") ||
+                    getName().equals("Laos") || getName().equals("Kazakhstan") || getName().equals("Philippines") ||
+                    getName().equals("Pakistan") || getName().equals("Mongolia") ||getName().equals("Finland") ||
+                    getName().equals("Croatia") ||getName().equals("Hungary") || getName().equals("Netherlands") ||
+                    getName().equals("Belgium") || getName().equals("Poland") || getName().equals("Denmark") ||
+                    getName().equals("Norway") || getName().equals("Greece") || getName().equals("Romania") ||
+                    getName().equals("Sweden") || getName().equals("Switzerland") ||getName().equals("Russia") ||
+                    getName().equals("Spain") || getName().equals("France") || getName().equals("Portugal") ||
+                    getName().equals("United States")){
                 this.gini = json.get(0).get("gini").get("2018").asDouble();
             }
-            if( getName().equals("Italy") || getName().equals("Somalia") || getName().equals("Tanzania") || getName().equals("Iceland") || getName().equals("United Kingdom") || getName().equals("Ireland") || getName().equals("Canada") || getName().equals("Chile")|| getName().equals("Egypt")){
+            if( getName().equals("Italy") || getName().equals("Somalia") || getName().equals("Tanzania") ||
+                    getName().equals("Iceland") || getName().equals("United Kingdom") || getName().equals("Ireland") ||
+                    getName().equals("Canada") || getName().equals("Chile")|| getName().equals("Egypt")){
                 this.gini = json.get(0).get("gini").get("2017").asDouble();
             }
-            if( getName().equals("Germany") ||  getName().equals("North Korea") || getName().equals("Uganda") || getName().equals("South Korea") || getName().equals("Israel") || getName().equals("South Sudan")){
+            if( getName().equals("Germany") ||  getName().equals("North Korea") || getName().equals("Uganda") ||
+                    getName().equals("South Korea") || getName().equals("Israel") || getName().equals("South Sudan")){
                 this.gini = json.get(0).get("gini").get("2016").asDouble();
             }
-            if( getName().equals("Malaysia") || getName().equals("Kenya") || getName().equals("Zambia") || getName().equals("Ethiopia")){
+            if( getName().equals("Malaysia") || getName().equals("Kenya") || getName().equals("Zambia") ||
+                    getName().equals("Ethiopia")){
                 this.gini = json.get(0).get("gini").get("2015").asDouble();
             }
-            if( getName().equals("Nicaragua") ||  getName().equals("Guatemala") || getName().equals("Australia") || getName().equals("Yemen") || getName().equals("Cameroon")){
+            if( getName().equals("Nicaragua") ||  getName().equals("Guatemala") || getName().equals("Australia") ||
+                    getName().equals("Yemen") || getName().equals("Cameroon")){
                 this.gini = json.get(0).get("gini").get("2014").asDouble();
             }
             if( getName().equals("Japan") || getName().equals("Morocco") ){
                 this.gini = json.get(0).get("gini").get("2013").asDouble();
             }
-            if( getName().equals("DR Congo") || getName().equals("Haiti") || getName().equals("Iraq") || getName().equals("Madagascar")){
+            if( getName().equals("DR Congo") || getName().equals("Haiti") || getName().equals("Iraq") ||
+                    getName().equals("Madagascar")){
                 this.gini = json.get(0).get("gini").get("2012").asDouble();
             }
-            if( getName().equals("Chad") || getName().equals("Lebanon") || getName().equals("Senegal") || getName().equals("Algeria")){
+            if( getName().equals("Chad") || getName().equals("Lebanon") || getName().equals("Senegal") ||
+                    getName().equals("Algeria")){
                 this.gini = json.get(0).get("gini").get("2011").asDouble();
             }
             if( getName().equals("Nepal")){
@@ -115,32 +135,54 @@ public class ConsultaApiPaisesDTO {
 
             JsonNode json1 = objectMapper.readTree(response1.toString());
             this.name2 = json1.get(0).get("name").get("common").asText();
-            if( getName2().equals("Peru") || getName2().equals("Dominican Republic") || getName2().equals("Honduras") || getName2().equals("Zimbabwe") || getName2().equals("Indonesia") || getName2().equals("Thailand") || getName2().equals("Ukraine") ||getName2().equals("Armenia") || getName2().equals("Turkey") || getName2().equals("Bolivia") || getName2().equals("Argentina") || getName2().equals("Colombia") || getName2().equals("Brazil") || getName2().equals("Panama") || getName2().equals("Paraguay") || getName2().equals("Uruguay") || getName2().equals("El Salvador") || getName2().equals("Ecuador") ){
+            if( getName2().equals("Peru") || getName2().equals("Dominican Republic") || getName2().equals("Honduras") ||
+                    getName2().equals("Zimbabwe") || getName2().equals("Indonesia") || getName2().equals("Thailand") ||
+                    getName2().equals("Ukraine") ||getName2().equals("Armenia") || getName2().equals("Turkey") ||
+                    getName2().equals("Bolivia") || getName2().equals("Argentina") || getName2().equals("Colombia") ||
+                    getName2().equals("Brazil") || getName2().equals("Panama") || getName2().equals("Paraguay") ||
+                    getName2().equals("Uruguay") || getName2().equals("El Salvador") || getName2().equals("Ecuador") ){
                 this.gini2 = json1.get(0).get("gini").get("2019").asDouble();
 
             }
-            if( getName2().equals("Mexico") || getName2().equals("Nigeria") || getName2().equals("Angola") || getName2().equals("Laos") || getName2().equals("Kazakhstan") || getName2().equals("Philippines") || getName2().equals("Pakistan") || getName2().equals("Mongolia") || getName2().equals("Finland") || getName2().equals("Croatia") || getName2().equals("Hungary") || getName2().equals("Netherlands") || getName2().equals("Belgium") || getName2().equals("Poland") || getName2().equals("Denmark") || getName2().equals("Norway") || getName2().equals("Greece") || getName2().equals("Romania") || getName2().equals("Sweden") || getName2().equals("Switzerland") || getName2().equals("Russia") || getName2().equals("Spain") || getName2().equals("France") || getName2().equals("Portugal") || getName2().equals("United States")){
+            if( getName2().equals("Mexico") || getName2().equals("Nigeria") || getName2().equals("Angola") ||
+                    getName2().equals("Laos") || getName2().equals("Kazakhstan") || getName2().equals("Philippines") ||
+                    getName2().equals("Pakistan") || getName2().equals("Mongolia") || getName2().equals("Finland") ||
+                    getName2().equals("Croatia") || getName2().equals("Hungary") || getName2().equals("Netherlands") ||
+                    getName2().equals("Belgium") || getName2().equals("Poland") || getName2().equals("Denmark") ||
+                    getName2().equals("Norway") || getName2().equals("Greece") || getName2().equals("Romania") ||
+                    getName2().equals("Sweden") || getName2().equals("Switzerland") || getName2().equals("Russia") ||
+                    getName2().equals("Spain") || getName2().equals("France") || getName2().equals("Portugal") ||
+                    getName2().equals("United States")){
                 this.gini2 = json1.get(0).get("gini").get("2018").asDouble();
             }
-            if( getName2().equals("Italy") || getName2().equals("Somalia") || getName2().equals("Tanzania") || getName2().equals("Iceland") || getName2().equals("United Kingdom") || getName2().equals("Ireland") || getName2().equals("Canada") || getName2().equals("Chile") || getName2().equals("Egypt")){
+            if( getName2().equals("Italy") || getName2().equals("Somalia") || getName2().equals("Tanzania") ||
+                    getName2().equals("Iceland") || getName2().equals("United Kingdom") ||
+                    getName2().equals("Ireland") || getName2().equals("Canada") || getName2().equals("Chile") ||
+                    getName2().equals("Egypt")){
                 this.gini2 = json1.get(0).get("gini").get("2017").asDouble();
             }
-            if( getName2().equals("Germany") ||  getName().equals("North Korea") || getName2().equals("Uganda") || getName2().equals("South Korea") || getName2().equals("Israel") || getName2().equals("South Sudan")){
+            if( getName2().equals("Germany") ||  getName().equals("North Korea") || getName2().equals("Uganda") ||
+                    getName2().equals("South Korea") || getName2().equals("Israel") ||
+                    getName2().equals("South Sudan")){
                 this.gini2 = json1.get(0).get("gini").get("2016").asDouble();
             }
-            if( getName2().equals("Malaysia") || getName2().equals("Kenya") || getName2().equals("Zambia") || getName2().equals("Ethiopia")){
+            if( getName2().equals("Malaysia") || getName2().equals("Kenya") || getName2().equals("Zambia") ||
+                    getName2().equals("Ethiopia")){
                 this.gini2 = json1.get(0).get("gini").get("2015").asDouble();
             }
-            if( getName2().equals("Nicaragua") || getName2().equals("Australia") || getName2().equals("Guatemala") || getName2().equals("Yemen") || getName2().equals("Cameroon")){
+            if( getName2().equals("Nicaragua") || getName2().equals("Australia") || getName2().equals("Guatemala") ||
+                    getName2().equals("Yemen") || getName2().equals("Cameroon")){
                 this.gini2 = json1.get(0).get("gini").get("2014").asDouble();
             }
             if( getName2().equals("Japan") || getName2().equals("Morocco") ){
                     this.gini2 = json1.get(0).get("gini").get("2013").asDouble();
             }
-            if( getName2().equals("DR Congo") || getName2().equals("Haiti") || getName2().equals("Iraq") || getName2().equals("Madagascar")){
+            if( getName2().equals("DR Congo") || getName2().equals("Haiti") || getName2().equals("Iraq") ||
+                    getName2().equals("Madagascar")){
                 this.gini2 = json1.get(0).get("gini").get("2012").asDouble();
             }
-            if( getName2().equals("Chad") || getName2().equals("Lebanon") || getName2().equals("Senegal") || getName2().equals("Algeria")){
+            if( getName2().equals("Chad") || getName2().equals("Lebanon") || getName2().equals("Senegal") ||
+                    getName2().equals("Algeria")){
                 this.gini2 = json1.get(0).get("gini").get("2011").asDouble();
             }
             if( getName2().equals("Nepal")){
