@@ -18,7 +18,7 @@ public class ConsultaChatGptDTO {
     consultaG consultaG = new consultaG();
     public String getConsultaGpt(String consulta) {
         String apiUrl = "https://api.openai.com/v1/completions";
-        String openaiApikey = "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";
+        String openaiApikey = "sk-zR0XefkPZQr0yXPVi7TbT3BlbkFJ9SKB6Gtjpi1YnmjD1UPCgenear";
         String text = null;
         {
             URL url = null;
